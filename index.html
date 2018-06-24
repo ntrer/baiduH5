@@ -9,10 +9,10 @@
   <script type="text/javascript">
     // 根据屏幕的宽度 来设置 html的 font-size
     // 设备的宽度
-    console.log(window.screen.width);
+   
     // 浏览器 可用的宽度
     // 移动端 用上下 两个都是可以
-    console.log(window.screen.availWidth);
+    
     // 计算 font-weight
     var fontSize = window.screen.availWidth / 20;
     document.querySelector('html').style.fontSize = fontSize + 'px';
@@ -328,10 +328,9 @@
   alert("请先按F12切换成手机模式，刷新后再浏览！！！！！");
   var swiper = new Swiper('.waimai-container', {
     direction: 'vertical',
-    // swiper的事件中 可以接受swiper作为参数
+    // swiper的事件中 可以接受swiper作为
     onSlideChangeEnd: function (swiper) {
       // alert(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
-      console.log(swiper.activeIndex);
       // 逻辑6.
       $('.swiper-slide').removeClass('animate');
       // 逻辑7.为当前页添加animateclass
@@ -339,11 +338,11 @@
 
       // 判断如果是 第三页 索引是从0开始
       if (swiper.activeIndex == 2) {
-        console.log('不要滑动了');
+       
         $('.swiper-slide').eq(swiper.activeIndex).addClass('swiper-no-swiping');
       }
       // 有没有 切换的上一页的索引值呢？
-      console.log('上一页的索引' + swiper.previousIndex);
+     
       // 如果上一次 显示的页面是 索引为2的那一页 说明 之前播放了 动画
       if (swiper.previousIndex == 2) {
         $('.swiper-slide').eq(2).find('.bear').css('background-image', 'url(images/page4/bear3.png');
@@ -367,7 +366,7 @@
       // oninput $('input').on('input')
       // $('.loading-layout').transitionend(function(){})
       $('.loading-layout').on('transitionend', function () {
-        console.log('end');
+        
       })
       // 动画结束事件 在 动画播放完毕时 触发第二页的动画 
       $('.loading-layout .rider').on('animationend', function () {
@@ -418,7 +417,7 @@
     // 定义索引 来记录 数据的索引值
     var index = 0;
     $('.swiper-slide').eq(2).click(function () {
-      console.log('开始提牌子');
+    
       var id = setInterval(function () {
         // 干掉定时器
         if (index >= animationArr.length) {
@@ -460,8 +459,7 @@
         // 通过索引 获取 对应的数据
         var obj = animationArr[index];
         // 更改 对应的元素的 内容
-        console.log($('.swiper-slide').eq(2).find('.bear'));
-        console.log($('.swiper-slide').eq(2).find(obj.card));
+  
         $('.swiper-slide').eq(2).find('.bear').css('background-image', obj.bear);
         $('.swiper-slide').eq(2).find(obj.card).css('background-image', obj.cardUrl);
         // 索引值 ++
@@ -475,7 +473,7 @@
       var audio = $('audio')[0];
 
       if (audio.paused == true) {
-        console.log('暂停中');
+      
         audio.play();
         $(this).css('background-image', 'url(images/play.png)');
       } else {
