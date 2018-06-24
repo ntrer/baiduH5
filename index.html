@@ -325,6 +325,7 @@
 
 <!-- 调用swiper的方法 -->
 <script type="text/javascript">
+  alert("请先按F12切换成手机模式后，刷新再浏览！！！！！");
   var swiper = new Swiper('.waimai-container', {
     direction: 'vertical',
     // swiper的事件中 可以接受swiper作为参数
@@ -357,7 +358,6 @@
   });
 
   $(function () {
-    alert("请按F12切换成手机模式，再浏览！！！！！");
     // 逻辑 1 2 2.1
     setTimeout(function () {
       $('.loading-layout').addClass('animate');
